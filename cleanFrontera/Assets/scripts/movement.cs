@@ -12,6 +12,7 @@ public class movement : MonoBehaviour
     private bool onLadder = false;
     private bool onTopLadder = false;
     private Rigidbody myRG;
+    public GameObject water;
 
 
     public int negGravity = 0;
@@ -37,6 +38,10 @@ public class movement : MonoBehaviour
         if(!onLadder)
         {
             gameObject.transform.position += new Vector3(horizontal, 0, 0) * speed * Time.deltaTime;
+            if(Input.GetKey(KeyCode.F)){
+                //Debug.Log("On");
+                water.SetActive(true);
+            }else water.SetActive(false);
         }
         else
         {
